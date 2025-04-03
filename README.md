@@ -3,10 +3,6 @@
 #### **LLM对话框组件** 
 
 此项目demo版与其他成员一同完成，源地址https://github.com/JINLING1/DebugDiva
-<<<<<<< HEAD
-
-=======
->>>>>>> 821f9d2f7a295fdc7e042d9c5a4a20a3dad8676a
 后续将在本仓库进行进一步改进。
 
 #### 启动方式
@@ -120,9 +116,9 @@ npm run dev
 
 ------
 
-![](\images\shousuo.png)
+![](./images/shousuo.png)
 
-![](\images\expand.png)
+![](./images/expand.png)
 
-![](\images\wenjian.png)
+![](./images/wenjian.png)
 
