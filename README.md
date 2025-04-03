@@ -116,8 +116,8 @@ npm run dev
 
 ------
 
-![](D:\yanjiusheng\qianduan\ChatWithDebugDiva\images\shousuo.png)
+![](.\images\shousuo.png)
 
-![](D:\yanjiusheng\qianduan\ChatWithDebugDiva\images\expand.png)
+![](.\images\expand.png)
 
-![](D:\yanjiusheng\qianduan\ChatWithDebugDiva\images\wenjian.png)
+![](.\images\wenjian.png)
