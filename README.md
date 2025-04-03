@@ -2,7 +2,7 @@
 
 #### **LLM对话框组件** 
 
-此项目demo版与其他成员一同完成，源地址https://github.com/JINLING1/DebugDiva。
+此项目demo版与其他成员一同完成，源地址https://github.com/JINLING1/DebugDiva
 后续将在本仓库进行进一步改进。
 
 #### 启动方式
