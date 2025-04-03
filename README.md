@@ -124,8 +124,5 @@ npm run dev
 
 ![](\images\expand.png)
 
-<<<<<<< HEAD
 ![](\images\wenjian.png)
-=======
-![](\images\wenjian.png)
->>>>>>> 821f9d2f7a295fdc7e042d9c5a4a20a3dad8676a
+
