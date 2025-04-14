@@ -87,7 +87,7 @@ export default {
     // 绑定所有图片的点击事件
     const bindImageClickEvents = () => {
       document.querySelectorAll(".message-content img").forEach((img) => {
-        const imgEl = img as HTMLImageElement;
+        const imgEl = img as HTMLImageElement; // 类型断言：img 是一个 HTMLImageElement 类型的对象
         imgEl.style.maxWidth = "100%";
         imgEl.style.height = "auto";
         imgEl.style.cursor = "pointer";
@@ -107,12 +107,13 @@ export default {
 
     // 监听 message 的变化
     watch(
-      () => props.message,
-      (newMessage) => {
-        markdownRender(newMessage);
+      () => props.message, // 监听源
+      (newMessage) => {    // 回调函数
+        markdownRender(newMessage); 
         // 重新执行复制按钮添加逻辑
-        nextTick(() => {
+        nextTick(() => {    // 确保完成DOM更新后再操作
           const codeBlocks = document.querySelectorAll("pre code");
+          // 为每个代码块创建复制按钮
           codeBlocks.forEach((block) => {
             const existingButton =
               block.parentElement?.querySelector(".copy-icon");
@@ -159,19 +160,17 @@ export default {
       // 去掉包含“你可以点击链接查看图片”文字的部分
       message = message.replace("链接", "图片");
       const md = new MarkdownIt({
-        html: true,
-        linkify: true,
-        typographer: true,
+        html: true,     // 允许 HTML 标签
+        linkify: true,   // 自动将类似 URL 的文本转换为链接
+        typographer: true, // 启用一些排版替换，如引号美化
         breaks: true, // 让 \n 自动转成 <br>
-      }).use(multiMdTable);
+      }).use(multiMdTable); // 使用多行表格插件
       //  自动转换 `[点击查看](url)` 为 `![点击查看](url)`
       // 1. 先去掉 `[点击查看](url)` 后面的 . 或 。（如果有的话）
-      message = message.replace(/\[(.*?)\]\((.*?)\)[。.]/g, "![$1]($2)");
-
-      // 2. 再确保 `[点击查看](url)` 仍然转换为 `![点击查看](url)`
-      message = message.replace(/\[(.*?)\]\((.*?)\)/g, "[$1]($2)");
-      message = message.replace(/(!\[[^\]]*]\(.*?\))(\S)/g, "$1\n\n$2");
+      // 转换所有 [文本](url) 为 ![文本](url)
+      message = message.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "![$1]($2)");
       htmlContent.value = md.render(message);
+      
     };
 
     onMounted(() => {
@@ -236,7 +235,7 @@ export default {
     };
   },
 
-  directives: {
+  directives: {     // 定义局部指令
     highlight: {
       updated(el: HTMLElement) {
         // 获取所有的 code 元素
@@ -256,7 +255,7 @@ export default {
 
 <style scoped>
 .assistant-message-container p {
-  display: inline; /* 防止 Markdown 解析后自动包裹 `<p>` */
+  display: inline; /* 令`<p>`标签展现为行内元素特性 */
   margin: 0;
   padding: 0;
 }

@@ -3,7 +3,7 @@
 #### **LLM对话框组件** 
 
 此项目demo版与其他成员一同完成，源地址https://github.com/JINLING1/DebugDiva
-<<<<<<< HEAD
+
 
 =======
 >>>>>>> 821f9d2f7a295fdc7e042d9c5a4a20a3dad8676a
