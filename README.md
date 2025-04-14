@@ -54,9 +54,7 @@ npm run dev
 
 - **数据存储**：使用 `localStorage` 持久化表格数据（`tableData`）
 - **交互功能**：  
-  - 悬浮展示行详情（`el-popover` 显示 `work` 和 `date`）。  
-  - 支持行内编辑（`el-input` 动态替换按钮，限制输入10字符）和删除操作。  
-  - 编辑保存后更新时间为当前时间戳。  
+  - 悬浮展示行详情（`el-popover` 显示 `work` 和 `date`）。   
 
 ##### **3. 右侧聊天功能**
 
