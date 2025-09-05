@@ -437,7 +437,7 @@ const handleSearch = async (userInput = "", updateIndex?: number) => {
       method: "POST",
       headers: {
         Authorization:
-          "Bearer pat_uKBQ6S0pAkO92IdPayzI3HFc2WMgmskwyiLiSgqCK1ZeFtj3HC1lt0SmSbLJelaZ",
+          "Bearer pat_z1WPq3VOtQRiHGPMF20VPpj72os7bZlRteF8CCGAAs7uHRILTWj8xMK64MfqqcAp",
         "Content-Type": "application/json",
       },
       body: payload,
@@ -800,7 +800,7 @@ const handleInputClick = () => {
   margin-left: 100px;
 }
 .aside-block {
-  background-color: red;
+  background-color: white;
   height: 100%;
   /* 内容溢出显示滚动条 */
   overflow: auto;

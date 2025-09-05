@@ -1,0 +1,336 @@
+.common-layout {
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    width: 100%;
+    min-width: 0;
+}
+
+/* 允许栅格列缩放 */
+.el-col {
+    flex-shrink: 1 !important;
+    /* 允许缩小 */
+    flex-grow: 1 !important;
+    /* 允许拉伸 */
+    min-width: 0 !important;
+    /* 覆盖 Element Plus 默认最小宽度 */
+}
+
+.right-container {
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+}
+
+.aside-block {
+    background-color: red;
+    height: 100%;
+    /* 内容溢出显示滚动条 */
+    overflow: auto;
+}
+
+.header-block {
+    /* background-color:lightblue; */
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+}
+
+.title {
+    /* position: absolute;
+  left: 1px;
+  top: 5px; */
+    font-style: italic;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0;
+}
+
+.main-block {
+    flex: 1;
+    padding: 10px;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-left: 150px;
+}
+
+.input-block {
+    height: 80%;
+    font-size: 18px;
+    border-radius: 20px;
+}
+
+.upload-btn {
+    position: absolute;
+    left: -125px;
+    top: 0px;
+    z-index: 1;
+}
+
+.search-btn {
+    position: relative;
+    top: 0px;
+    right: -15px;
+    z-index: 1;
+}
+
+.oper-btn {
+    position: relative;
+}
+
+#delete-btn {
+    position: absolute;
+    width: 40%;
+}
+
+.user-message,
+.assistant-message {
+    word-break: break-word;
+    /* 长单词自动换行 */
+}
+
+.streamed-output-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/*加了以下*/
+/* 过渡动画 */
+.chat-transition-enter-active,
+.chat-transition-leave-active {
+    transition: all 0.3s ease;
+}
+
+.chat-transition-enter-from,
+.chat-transition-leave-to {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* 容器定位 */
+.el-col.el-col-18 {
+    position: relative;
+}
+
+.chat-input-container {
+    position: absolute;
+    left: 50%;
+    margin-top: 10px;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    transition: all 0.3s ease;
+}
+
+/* 不同状态定位 */
+.chat-input-container.collapsed {
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.chat-input-container.expanded {
+    top: 40%;
+}
+
+/* 就是这段代码让.chat-input-container从footer溢出了！！！ */
+/* .chat-input-container.dialog {
+  bottom: 10px;
+} */
+
+/* 建议项样式 */
+.suggestions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.suggestion-item {
+    padding: 12px;
+    background: #f5f7fa;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.suggestion-item:hover {
+    background: #e4e7ed;
+    transform: translateY(-2px);
+}
+
+.assistant-message-container {
+    display: flex;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.copy-btn {
+    position: absolute;
+    left: 45px;
+    bottom: 10px;
+    padding: 4px;
+    background-color: #f1f8e9 !important;
+    border: none !important;
+    z-index: 0;
+}
+
+.update-btn {
+    position: absolute;
+    left: 60px;
+    bottom: 10px;
+    padding: 4px;
+    background-color: #f1f8e9 !important;
+    border: none !important;
+    z-index: 0;
+}
+
+/* 调整图标可见性 */
+.copy-btn .el-icon {
+    color: #606266;
+    font-size: 16px;
+}
+
+.copy-btn:hover .el-icon {
+    color: #92c876;
+    /* 悬停绿色 */
+}
+
+.floating-file-list {
+    position: absolute;
+    bottom: 100%;
+    /* 显示在输入框上方 */
+    left: 0;
+    right: 0;
+    padding: 8px;
+    background: var(--el-bg-color);
+    border-radius: 4px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    z-index: 2000;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.el-tag {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    display: inline-flex !important;
+    /* 启用flex布局 */
+    align-items: center;
+    /* 垂直居中 */
+    height: 32px;
+    line-height: normal !important;
+    vertical-align: middle !important;
+}
+
+.el-tag__content {
+    padding: 0px 12px 0px 0px;
+}
+
+/* 注意优先级 */
+.el-tag .delete-icon {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    line-height: 1;
+    transition: all 0.2s;
+}
+
+.delete-icon:hover {
+    color: #f56c6c;
+    transform: translateY(-50%) scale(1.5);
+}
+
+/* 头像 */
+.avatar-container {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid #c5e1a5;
+    background-color: #fff;
+    /* 隐藏超出部分 */
+    overflow: hidden;
+    /* 头像和文本之间的间距 */
+    margin-right: 10px;
+}
+
+/* .avatar {
+  确保头像图片覆盖整个容器
+  object-fit: cover; 
+} */
+
+.avatar {
+    width: 22px;
+    height: 22px;
+    /* border-radius: 50%; */
+    margin: 4px;
+}
+
+/* 动态转圈 */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    border: 2px solid #f3f3f3;
+    /* Light grey */
+    border-top: 2px solid gray;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spin 1s linear infinite;
+    margin-top: 20px;
+    /* 调整上边距 */
+    margin-bottom: 5px;
+    /* 调整下边距 */
+}
+
+/* 欢迎页 */
+.welcome-message {
+    display: flex;
+    align-items: center;
+    background-color: #f0f8ff;
+    color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #d0e4ff;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.small-text {
+    font-size: 18px;
+    /* 小字 */
+    color: #666;
+}
+
+.light-button {
+    opacity: 0.7;
+    /* 按钮颜色变浅 */
+}
